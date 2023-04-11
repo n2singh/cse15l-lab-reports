@@ -45,6 +45,7 @@
 - To download VSCode you must go to the link [Link](https://code.visualstudio.com/) and click “Download for Windows” then click the download at the bottom of your screen when it is finsihed
 
 ![Image](image8.png)
+![Image](VSCode starter page picture.jpg)
 
 - Once downloaded you can open the app and the screen will look like this
 
