@@ -164,12 +164,12 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?**
 
 
 ```- cd ~
-```- cd
-```- ls -lat
-```- ls -a
-```- ls <directory> where <directory> is /home/linux/ieng6/cs15lsp23/cs15lsp23abc, where the abc is one of the other group members’ username
-```- cp /home/linux/ieng6/cs15lsp23/public/hello.txt ~/
-```- cat /home/linux/ieng6/cs15lsp23/public/hello.txt
+- cd
+- ls -lat
+- ls -a
+- ls <directory> where <directory> is /home/linux/ieng6/cs15lsp23/cs15lsp23abc, where the abc is one of the other group members’ username
+- cp /home/linux/ieng6/cs15lsp23/public/hello.txt ~/
+- cat /home/linux/ieng6/cs15lsp23/public/hello.txt```
     
     
 
