@@ -121,7 +121,7 @@
 
 - Now that Git is installed, we can lookup our course specific account by typing the line 
 ```
-**$ ssh cs15lsp23xx@ieng6.ucsd.edu**
+$ ssh cs15lsp23xx@ieng6.ucsd.edu
 ```
 - with **xx** replacing the letters that are specific to your account (Do not type the $, it is just a convention)
 
