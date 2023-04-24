@@ -119,7 +119,11 @@
 
 ![Image](image12.jpg)
 
-- Now that Git is installed, we can lookup our course specific account by typing the line **$ ssh cs15lsp23xx@ieng6.ucsd.edu** with **xx** replacing the letters that are specific to your account (Do not type the $, it is just a convention)
+- Now that Git is installed, we can lookup our course specific account by typing the line 
+```
+**$ ssh cs15lsp23xx@ieng6.ucsd.edu**
+```
+- with **xx** replacing the letters that are specific to your account (Do not type the $, it is just a convention)
 
 
 
@@ -177,7 +181,10 @@ Some examples
     
     
   
-Command → “pwd”
+Command → 
+```
+“pwd”
+```
   
 - This command printed the directory I was working in at the time. This directory is specific to me because cs15lsp23ld is my own username (and therefore my own private directory), but /home/linux/ieng6/cs15lsp23/ would be the same home directory as other people in the group because we’re all working/connected on the same server.
     
@@ -187,15 +194,20 @@ Command → “pwd”
     
     
   
-Command → -lat which listed the files in the current working directory
-    
+Command → 
+```
+-lat which listed the files in the current working directory
+```
     
   
 ![Image](image17.jpg)
     
     
   
-command → ls -a 
+command → 
+```
+ls -a 
+```
 - This command shows different files, including hidden ones such as login, bash, config and profile.
     
     
