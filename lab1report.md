@@ -186,11 +186,11 @@ Command →
 “pwd”
 ```
   
-- This command printed the directory I was working in at the time. This directory is specific to me because cs15lsp23ld is my own username (and therefore my own private directory), but /home/linux/ieng6/cs15lsp23/ would be the same home directory as other people in the group because we’re all working/connected on the same server.
+- This command printed the directory I was working in at the time. This directory is specific to me because cs15lsp23la is my own username (and therefore my own private directory), but /home/linux/ieng6/cs15lsp23/ would be the same home directory as other people in the group because we’re all working/connected on the same server.
     
     
   
-![Image](image16.jpg)
+![Image](updatedimage.jpg)
     
     
   
