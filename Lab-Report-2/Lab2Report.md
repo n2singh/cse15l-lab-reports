@@ -157,7 +157,26 @@ static int[] reversed(int[] arr) {
 ```
 
 With the fixed code, the method runs as expected and both JUnit tests are passed. 
-The switch of the two variables in the for loop and swapping the return from `arr` to `newArray` fixed `arr`'s values to be assigned into `newArray` in reverse order, creating a reversed copy without effecting the original
+The switch of the two variables in the for loop and swapping the return from `arr` to `newArray` fixed `arr`'s values to be assigned into `newArray` in reverse order, creating a reversed copy without effecting the original.
 
 ![Image](image2.png)
 
+---
+## Part 3
+---
+In a couple of sentences, describe something you learned from lab in week 2 or 3 that you didn’t know before.
+
+---
+
+From Lab in week 2, something I leanred that I didn't know before was learning how to 
+- build and run the server on your local computer using the two commands from the working directory of the clone of the repository.
+```
+javac Server.java NumberServer.java 
+⤇ java NumberServer 4000
+```
+
+This whole concept was really cool and fun to learn about because I did not know that we can run our own web servers and I also did not know the terms `Port` and `Localhost`.
+
+I learned that public sites use `Ports` as well but I did not know this because they are hidden by default. The number isn't special and we could choose from a range of numbers, and it is important because it  allows computers to send and receive data over a network. The `Localhost` domain is a special IP address and the data never actually leaves the computer's network interface. This is useful for testing and troubleshooting network applications.
+
+I hope we can continue to learn more about building and running servers!
