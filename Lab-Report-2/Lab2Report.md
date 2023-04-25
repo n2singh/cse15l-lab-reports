@@ -1,6 +1,6 @@
 # **Lab Report 2**
 ---
-There are three parts to this lab
+There are three parts to this lab.
 ## Part 1
 ---
 The first part is to write a web server called `StringServer` that should keep track of a single string that gets added to by incoming requests.
@@ -60,11 +60,13 @@ public class StringServer {
 ---
 When ran with `Server.java`, `StringServer.java` creates an online server that is able to store and display strings. 
 Inputting specific paths allows strings to be added and displayed on the site.
-- Here is two screenshots using `/add-message`
-
-- Which methods in your code are called?
-- What are the relevant arguments to those methods, and the values of any relevant fields of the class?
-- How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
+Here is two screenshots using `/add-message`
+Which methods in your code are called?
+- a
+What are the relevant arguments to those methods, and the values of any relevant fields of the class?
+- a
+How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
+- a
 
 - Which methods in your code are called?
 - What are the relevant arguments to those methods, and the values of any relevant fields of the class?
