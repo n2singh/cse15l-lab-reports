@@ -157,12 +157,7 @@ static int[] reversed(int[] arr) {
 ```
 
 With the fixed code, the method runs as expected and both JUnit tests are passed. 
-The switch of the two variables in the for loop and swapping the return from `arr` to `newArray` fixed `arr`'s values to be assigned into `newArray` in reverse order, creating a reversed copy without effecting the original.
+The switch of the two variables in the for loop and swapping the return from `arr` to `newArray` fixed `arr`'s values to be assigned into `newArray` in reverse order, creating a reversed copy without effecting the original
 
 ![Image](image2.png)
-
-
-
-
-
 
