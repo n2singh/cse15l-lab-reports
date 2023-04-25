@@ -108,7 +108,9 @@ static int[] reversed(int[] arr) {
   }
 ```
 
-This method was supposed to take an array arr and return a new copy with it's contents in reverse order. For example, an array of {1, 2, 3} is supposed to return a new array containing {3, 2, 1}. The code is tested with a JUnit test, which is passed when ran.
+This method is supposed to take an array `arr` and return a new copy with it's contents in reverse order. 
+- For example, an `arr` of {1, 2, 3} will return a new `arr` {3, 2, 1}. 
+When tested with JUnit, it passed.
 
 ```
 @Test
@@ -118,15 +120,19 @@ This method was supposed to take an array arr and return a new copy with it's co
   }
 ```
 
-While this test passed, the code itself has a major bug which wasn't accounted for with this test.Using the same example as before, if arr was {1, 2, 3}, the actual array returned would be {0, 0, 0} when the expected is {3, 2, 1}.
+Although the test passed, it has a major bug.
+For example, if `arr` was {1, 2, 3}, it returned {0, 0, 0} when the expected is {3, 2, 1}.
 
 ![Image](Image1.png)
 
-The photo above shows the original JUnit test plus another test I added. The test checks the error in two ways. First is by checking the new array. It should have been {3, 2, 1} but instead was {0, 0, 0}. Second is by checking the original array. Since the reversed method was supposed to create a new array, the original shouldn’t have been tampered with. Checking arr after using the reversed method, it ended up becoming {0, 0, 0} when it should have been {1, 2, 3}.
+The photo above shows the original JUnit + my own, checking the error in 2 ways. 
+1. Check the new `arr`. It should have been {3, 2, 1} but instead was {0, 0, 0}. 
+2. Check the original `arr`. Since the `reversed` method was supposed to create a new array, the original shouldn’t have been tampered with. Checking 'arr' after using the `reversed` method, it ended up becoming {0, 0, 0} when it should have been {1, 2, 3}.
 
-This was because the code mixed up the assignment in the for loop. The method assigns the new empty newArray’s values to the old arr, causing both of the arrays to become empty.
+The error here is that the code mixed up the assignment in the for loop. 
+The method assigns the new empty newArray’s values to the old arr, causing both of the arrays to become empty.
 
-Original method:
+Original method with error:
 
 ```
 static int[] reversed(int[] arr) {
@@ -138,7 +144,7 @@ static int[] reversed(int[] arr) {
   }
 ```
 
-Fixed method:
+Method rewritten and fixed:
 
 ```
 static int[] reversed(int[] arr) {
@@ -150,7 +156,8 @@ static int[] reversed(int[] arr) {
   }
 ```
 
-With the fixed code, the method runs as expected and both JUnit tests are passed. It was a simple switch of the two variables in the for loop as well as swapping the return from arr to newArray. This allows arr's values to be assigned into newArray in reverse order, created a reversed copy without effecting the original.
+With the fixed code, the method runs as expected and both JUnit tests are passed. 
+The switch of the two variables in the for loop and swapping the return from `arr` to `newArray` fixed `arr`'s values to be assigned into `newArray` in reverse order, creating a reversed copy without effecting the original.
 
 ![Image](image2.png)
 
