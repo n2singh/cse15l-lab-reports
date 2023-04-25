@@ -65,26 +65,27 @@ Here are two screenshots using `/add-message`
 
 ![Image](addmessage1.png)
 
-Which methods in your code are called?
-- ahdhf
-
-What are the relevant arguments to those methods, and the values of any relevant fields of the class?
-- adjwijd
-
-How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
-- lshdish
-
-
 ![Image](addmessage2.png)
 
+We can see here that the first image will store the word "Naina" until the server restarts.
+In image 2, I added the word "Banana" which appears there in addition to my name.
+
+**Explanation**
+
 Which methods in your code are called?
-- ahdhf
-
 What are the relevant arguments to those methods, and the values of any relevant fields of the class?
-- adjwijd
-
 How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
-- lshdish
+
+- The main method's parameter "args" is the port of the server. The method starts by checking if a port was given. If it wasn't, it will display an error and prompt the host to try again. Then, the first arg is parseInted to an Integer type so it can be used as the port. Once the port is processed, the server is started through the Server.java file.
+- Above is the Handler class, which deals with the url input. The class begins by initializing a string ArrayList called arr. arr is used to store all inputs by the user
+- The first method in Handler is handleRequest. This method is what goes through the url input to determine what action to take.
+
+1. If there is no added path, it will return the current state of arr.
+2. If the path is "/add-message", it will read the query and add the string after the "=" to arr. Then it will return the current state of arr.
+3. If the path is invalid, return an error "404 Not Found!"
+4. As you might observe, there is a method called makeString included everytime arr is returned.
+
+-makeString does as it sounds, it formats arr into a string. It does so by going through each element of the ArrayList and adding it to a string, with newlines between each element. This is necessary because the handleRequest method's return type is String and arr is an ArrayList.
 
 
 
