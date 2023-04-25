@@ -60,7 +60,8 @@ public class StringServer {
 ---
 When ran with `Server.java`, `StringServer.java` creates an online server that is able to store and display strings. 
 Inputting specific paths allows strings to be added and displayed on the site.
-Here is two screenshots using `/add-message`
+
+Here are two screenshots using `/add-message`
 
 Which methods in your code are called?
 - ahdhf
