@@ -1,8 +1,8 @@
-# **Lab Report 2** #
+# **Lab Report 2**
 ---
 There are three parts to this lab.
 ---
-## Part 1 ##
+## Part 1
 ---
 The first part is to write a web server called `StringServer` that should keep track of a single string that gets added to by incoming requests.
 Using the given code from lab two and my own implementation, I have the code for `StringServer.java` below
