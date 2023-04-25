@@ -70,6 +70,8 @@ Here are two screenshots using `/add-message`
 We can see here that the first image will store the word "Naina" until the server restarts.
 In image 2, I added the word "Banana" which appears there in addition to my name.
 
+---
+
 **Explanation**
 
 Which methods in your code are called?
@@ -85,7 +87,11 @@ How do the values of any relevant fields of the class change from this specific 
 3. If the path is invalid, return an error "404 Not Found!"
 4. As you might observe, there is a method called makeString included everytime arr is returned.
 
--makeString does as it sounds, it formats arr into a string. It does so by going through each element of the ArrayList and adding it to a string, with newlines between each element. This is necessary because the handleRequest method's return type is String and arr is an ArrayList.
+- makeString does as it sounds, it formats arr into a string. It does so by going through each element of the ArrayList and adding it to a string, with newlines between each element. This is necessary because the handleRequest method's return type is String and arr is an ArrayList.
+
+---
+
+
 
 
 
