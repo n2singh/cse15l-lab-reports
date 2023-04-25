@@ -63,6 +63,20 @@ Inputting specific paths allows strings to be added and displayed on the site.
 
 Here are two screenshots using `/add-message`
 
+![Image](addmessage1.png)
+
+Which methods in your code are called?
+- ahdhf
+
+What are the relevant arguments to those methods, and the values of any relevant fields of the class?
+- adjwijd
+
+How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
+- lshdish
+
+
+![Image](addmessage2.png)
+
 Which methods in your code are called?
 - ahdhf
 
