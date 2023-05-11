@@ -1,182 +1,87 @@
-# **Lab Report 2**
+# Lab Report 3
 ---
-There are three parts to this lab.
-## Part 1
+Directions: Consider the commands less, find, and grep. Choose one of them. Online, find 4 interesting command-line options or alternate ways to use the command you chose. Show each example as a code block that shows the command and its output, and write a sentence or two about what it’s doing and why it’s useful. That makes 8 total examples, all focused on a single command. There should be two examples each for four different command-line options. Along with each option/mode you show, cite your source for how you found out about it as a URL or a description of where you found it.
+For this lab, I will be using the `less` command.
+I learned about the less command with this website [How to Use the less Command in Linux with Examples](http://a.com](https://phoenixnap.com/kb/less-command-in-linux)
 ---
-The first part is to write a web server called `StringServer` that should keep track of a single string that gets added to by incoming requests.
-Using the given code from lab two and my own implementation, I have the code for `StringServer.java` below
-
-```
-//Part 1 of The Lab 
-
-import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
-
-class Handler implements URLHandler {
-    ArrayList<String> arr = new ArrayList<>();
-    
-    public String handleRequest(URI url) {
-        if (url.getPath().equals("/")) {
-            return makeString(arr);
-        }
-        else if (url.getPath().equals("/add-message")) {
-            String[] parameters = url.getQuery().split("=");
-            arr.add(parameters[1]);
-            return makeString(arr);
-        }
-        return "404 Not Found!";
-    }
-
-    // concatenate a new line (\n) and the string after = to the running string, 
-    //and then respond with the entire string so far
-
-    public String makeString(ArrayList<String> arr) {
-        String str = "";
-
-        for (int i = 0; i < arr.size(); i++) {
-            str = str + arr.get(i) + "\n";
-        }
-
-        return str;
-    }
-}
-
-//Similar to given code from NumberServer.java
-
-public class StringServer {
-    public static void main(String[] args) throws IOException {
-        if(args.length == 0){
-            System.out.println("Missing port number! Try any number between 1024 to 49151");
-            return;
-        }
-
-        int port = Integer.parseInt(args[0]);
-
-        Server.start(port, new Handler());
-    }
-}
-```
----
-When ran with `Server.java`, `StringServer.java` creates an online server that is able to store and display strings. 
-Inputting specific paths allows strings to be added and displayed on the site.
-
-Here are two screenshots using `/add-message`
-
-![Image](addmessage1.png)
-
-![Image](addmessage2.png)
-
-We can see here that the first image will store the word "Naina" until the server restarts.
-In image 2, I added the word "Banana" which appears there in addition to my name.
-
----
-
-**Explanation**
-
-Which methods in your code are called?
-What are the relevant arguments to those methods, and the values of any relevant fields of the class?
-How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
-
-- The main method's parameter "args" is the port of the server. The method starts by checking if a port was given. If it wasn't, it will display an error and prompt the host to try again. Then, the first arg is parseInted to an Integer type so it can be used as the port. Once the port is processed, the server is started through the Server.java file.
-- Above is the Handler class, which deals with the url input. The class begins by initializing a string ArrayList called arr. arr is used to store all inputs by the user
-- The first method in Handler is handleRequest. This method is what goes through the url input to determine what action to take.
-
-1. If there is no added path, it will return the current state of arr.
-2. If the path is "/add-message", it will read the query and add the string after the "=" to arr. Then it will return the current state of arr.
-3. If the path is invalid, return an error "404 Not Found!"
-4. As you might observe, there is a method called makeString included everytime arr is returned.
-
-- makeString does as it sounds, it formats arr into a string. It does so by going through each element of the ArrayList and adding it to a string, with newlines between each element. This is necessary because the handleRequest method's return type is String and arr is an ArrayList.
-
----
-
-## Part 2
----
-For part 2, we need to choose one of the bugs from lab 3.
-
+## Auto Exit: `-e`
 --- 
-The issue I am going to address is from `ArrayExamples.java`, which consisted of two buggy methods. One of which was reverse.
+The first one I looked into was `-e`. and it is convenient for reading multiple connected articles.
+using `less <file>`, the end of a file is signified by an (END) placed after all the document's contents have been explored. To exit, you would have to press `q`.
+The end of a file looked like this:
 
+![Image](lab3img1.png)
+
+If you use less `-e <file>`, it automatically ends the command after the file's contents have been explored. It does not show the end symbol
+Here is an example using the same file in the `less <file>` example above.
+
+![Image](lab3img2.png)
+
+There's no longer an (END) mark and instead we are returned back to the terminal. 
+The ends of the text file don't look the same in both examples but that's because after leaving the `less` command, most of the text file is hidden away. If you would like to check they are the same file, I used the `JungleMalaysia.txt` file, located in `written_2/travel_guides/berlitz1/`.
+it can be really useful when examing multiple documents of similar content, as it would be bothersome to exit and retype less for every document.
+
+When looking through the files in `written_2/travel_guides/berlitz2/`, I realized a lot of them follow a similar pattern of four files. All the locations that had a travel guide contained one or multiple of these four topics: Intro, History, WhatToDo, and/or WhereToGo. it would be easier to read them all in succession rather than having to re-insert `less` over and over again. I created a script called `read.sh` to allow anyone to read about a destination of their choice and it would display them in succession until reaching the final document, in which it will show the (END) symbol. To run it, use the command: `$ bash read.sh <location-of-choice->.`
+This is what the file `read.sh` contains:
 ```
-static int[] reversed(int[] arr) {
-    int[] newArray = new int[arr.length];
-    for(int i = 0; i < arr.length; i += 1) {
-      arr[i] = newArray[arr.length - i - 1];
-    }
-    return newArray;
-  }
+less -e travel_guides/berlitz2/$1-Intro.txt
+less -e travel_guides/berlitz2/$1-History.txt
+less -e travel_guides/berlitz2/$1-WhatToDo.txt
+less travel_guides/berlitz2/$1-WhereToGo.txt
 ```
-
-This method is supposed to take an array `arr` and return a new copy with it's contents in reverse order. 
-- For example, an `arr` of {1, 2, 3} will return a new `arr` {3, 2, 1}. 
-When tested with JUnit, it passed.
-
-```
-@Test
-  public void testReversed() {
-    int[] input1 = { };
-    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
-  }
-```
-
-Although the test passed, it has a major bug.
-For example, if `arr` was {1, 2, 3}, it returned {0, 0, 0} when the expected is {3, 2, 1}.
-
-![Image](Image1.png)
-
-The photo above shows the original JUnit + my own, checking the error in 2 ways. 
-1. Check the new `arr`. It should have been {3, 2, 1} but instead was {0, 0, 0}. 
-2. Check the original `arr`. Since the `reversed` method was supposed to create a new array, the original shouldn’t have been tampered with. Checking 'arr' after using the `reversed` method, it ended up becoming {0, 0, 0} when it should have been {1, 2, 3}.
-
-The error here is that the code mixed up the assignment in the for loop. 
-The method assigns the new empty newArray’s values to the old arr, causing both of the arrays to become empty.
-
-Original method with error:
-
-```
-static int[] reversed(int[] arr) {
-    int[] newArray = new int[arr.length];
-    for(int i = 0; i < arr.length; i += 1) {
-      arr[i] = newArray[arr.length - i - 1];
-    }
-    return newArray;
-  }
-```
-
-Method rewritten and fixed:
-
-```
-static int[] reversed(int[] arr) {
-    int[] newArray = new int[arr.length];
-    for(int i = 0; i < arr.length; i += 1) {
-      newArray[i] = arr[arr.length - i - 1]; //newArray is swapped with arr
-    }
-    return newArray; //newArray is returned instead of arr
-  }
-```
-
-With the fixed code, the method runs as expected and both JUnit tests are passed. 
-The switch of the two variables in the for loop and swapping the return from `arr` to `newArray` fixed `arr`'s values to be assigned into `newArray` in reverse order, creating a reversed copy without effecting the original.
-
-![Image](image2.png)
-
+`-e` can be a very convenient tool for scripting and easily accessing multiple files.
 ---
-## Part 3
+## The Ctrl+F: `-p[pattern]`
 ---
-In a couple of sentences, describe something you learned from lab in week 2 or 3 that you didn’t know before.
+The windows search command is `Ctrl+F`, which pulls up a search menu and allows you to search for specific words throughout the website you're located on. 
 
+`less -p[pattern]` does exactly this in the terminal
+
+`less -p[pattern]` is used by replacing [pattern] with any string of words and it will start the `less` process at the first instance of that word. Not only will it go straight to that word, it will highlight all instances of that word throughout the search of the file, which makes it extremely helpful if you're looking for specific information. If the pattern you desire is more than one word, you can contain them between quotation marks and it will work fine.
+
+Here's an example of searching through `written_2/non_fiction/OUP/Castro/chL.txt` for the pattern "La Llorona":
+
+![Image](lab3img3.png)
+
+Using `$ less -p"La Llorona" non-fiction/OUP/Castro/chL.txt`, it brings us to the first instance of "La Llorona" while highlighting all instances of "La Llorona" visible. It also allows us to continue transversing the file with the `less` command, and each new instance of "La Llorona" is also highlighted.
+Another example, we can look for beaches in Puerto Rico and scan the travel guide using `less -pbeach travel_guides/berlitz2/PuertoRico-WhereToGo.txt` and locate all instances of "beach" in order to find one.
+
+![Image](lab3img4.png)
+
+Doing so brings us to the location above, which isn't really that helpful since it doesn't mention the name of any beaches we can visit. Luckily we can continue going through the file, using the `less aspect`, which eventually leads us to some more useful information:
+
+![Image](lab3img5.png)
+
+`-p[pattern]` is a helpful option since it can be used to locate specific pieces of information within a file. This can be used not only in text documents but also files, as it allows you to single out certain parts of code, which can be useful in debugging.
 ---
+## Pause: `-X`
+---
+After exiting the `less` command, most, if not all, the text is removed from the terminal. Using the `-X` option prevents that by disabling the screen clear command that occurs after `less`.
+While traversing through `written_2/non-fiction/OUP/Fletcher/ch2.txt`, I want to find an important name to write down. Luckily, I used `less -X`, so when I quit, the text stays and I can access the terminal to echo it into my notes file.
 
-From Lab in week 2, something I leanred that I didn't know before was learning how to 
-- build and run the server on your local computer using the two commands from the working directory of the clone of the repository.
-```
-javac Server.java NumberServer.java 
-⤇ java NumberServer 4000
-```
+![Image](lab3img6.png)
 
-This whole concept was really cool and fun to learn about because I did not know that we can run our own web servers and I also did not know the terms `Port` and `Localhost`.
+It can also be used with `p[pattern]` to return to your previous location in the file. If we were reading `Barcelona-WhereToGo.txt` but needed to take a break, since we used `less -X`, we can quit the terminal, and our last place will be saved. To return there, we just used `less -p[pattern]` to return to our chosen location.
 
-I learned that public sites use `Ports` as well but I did not know this because they are hidden by default. The number isn't special and we could choose from a range of numbers, and it is important because it  allows computers to send and receive data over a network. The `Localhost` domain is a special IP address and the data never actually leaves the computer's network interface. This is useful for testing and troubleshooting network applications.
+![Image](lab3img7.png)
 
-I hope we can continue to learn more about building and running servers!
+And we can continue where we left off.
+Basically, `-X` is a useful option since it allows you to keep your traces of `less` so you can remember what you've previously seen without having to re-transverse the entire file once more. Sometimes you might not want to keep the file's contents there, which is why `-X` is also a situational option and should only be used when the situation calls for it.
+---
+## Line Numbering: `-N`
+---
+Using the option `-N` adds line numbers to the left of the text, which tells you exactly which lines are being displayed from the file.
+Here's an example using `$ less -N travel_guides/berlitz1/HandRIsrael.txt`:
+
+![Image](lab3img8.png)
+
+As you can see, each line is numbered just as the file itself is.
+Here's another example, using larger line sizes with `$ less -N travel_guides/berlitz2/Amsterdam-History.txt`:
+
+![Image](lab3img9.png)
+
+On the right, you might notice some numbers are repeating. This is because the line numbering matches the file. Since the terminal isn't infinitely vast as a file, it splits the file's extremely long lines into multiple lines but keeps the line number consistent.
+`-N` is beneficial if you have access to the actual file. Since you are able to see the exact line number, you can directly find your spot from the terminal in the actual file with more efficiency.
+
+
+
