@@ -1,8 +1,8 @@
 # Lab Report 3
 ---
-Directions: Consider the commands less, find, and grep. Choose one of them. Online, find 4 interesting command-line options or alternate ways to use the command you chose. Show each example as a code block that shows the command and its output, and write a sentence or two about what it’s doing and why it’s useful. That makes 8 total examples, all focused on a single command. There should be two examples each for four different command-line options. Along with each option/mode you show, cite your source for how you found out about it as a URL or a description of where you found it.
+- 
 For this lab, I will be using the `less` command.
-I learned about the less command with this website [How to Use the less Command in Linux with Examples](https://phoenixnap.com/kb/less-command-in-linux)
+I learned about the less command with this website: [How to Use the less Command in Linux with Examples](https://phoenixnap.com/kb/less-command-in-linux)
 ---
 ## Auto Exit: `-e`
 --- 
