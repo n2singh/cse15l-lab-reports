@@ -9,6 +9,7 @@ Keystrokes:
 - Type in password or you don't need to if you have your SSH key set up
 
 Screenshot:
+
 ![Image](lab4img1.png)
 
 ## Step 2: Clone the fork of the repository into our own Github account
@@ -17,6 +18,7 @@ Screenshot:
 - cd l `<tab>` `<enter>` this autofills to lab7 and shifted me into the lab7 directory which just got cloned.
 
 Screenshot:
+
 ![Image](lab4img2.png)
 
 ## Step 3: Run the tests and show they fail
@@ -29,6 +31,7 @@ Keystrokes:
 - there was 11 spaces above in the terminal from practicing before and it compiled the files and ran the tests
 
 Screenshot:
+
 ![Image](lab4img3.png)
 
 ## Step 4: Edit the code to fix the failures
@@ -40,6 +43,7 @@ Keystrokes:
 - :wq (saves file and quits vim)
 
 Screenshot:
+
 ![Image](lab4img4.png)
 
 (after opening the file using vim and after changing index 1 to 2 which is highlighted by cursor)
@@ -52,6 +56,7 @@ Keystrokes:
 was 3 places up in the terminal; compiled the java files and ran the tests.
 
 Screenshot:
+
 ![Image](lab4img5.png)
 
 ## Step 6: Commit and push the change to your Github account
@@ -64,6 +69,7 @@ Screenshot:
 - git push [Link](git@github.com:n2singh/lab7.git) `<enter>` (push to github)
 
 Screenshot:
+
 ![Image](lab4img6.png)
 
 ---
