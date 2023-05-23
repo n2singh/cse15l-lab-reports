@@ -1,6 +1,6 @@
 # Lab Report 4
 ---
-For this lab we are taking the same tasks from lab and reproducing them on our own while taking screenshots and writing down all the keys pressed. (Steps 4-9)
+- For this lab we are taking the same tasks from lab and reproducing them on our own while taking screenshots and writing down all the keys pressed. (Steps 4-9)
 ---
 ## Step 1: Log into your ieng6 account
 ---
