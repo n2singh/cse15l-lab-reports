@@ -1,8 +1,7 @@
 # Lab Report 3
 ---
-- 
-For this lab, I will be using the `less` command.
-I learned about the less command with this website: [How to Use the less Command in Linux with Examples](https://phoenixnap.com/kb/less-command-in-linux)
+- For this lab, I will be using the `less` command.
+- I learned about the less command with this website: [How to Use the less Command in Linux with Examples](https://phoenixnap.com/kb/less-command-in-linux)
 ---
 ## Auto Exit: `-e`
 --- 
