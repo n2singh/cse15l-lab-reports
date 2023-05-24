@@ -5,17 +5,17 @@
 4 interesting command-line options I will be using are:
 
 - `-N`
-- `-s`
+- `-F`
 
 These two options I found from this website --> [How to Use the less Command in Linux with Examples](https://phoenixnap.com/kb/less-command-in-linux#:~:text=Note%3A%20By%20default%2C%20searching%20in,phrase%20and%20see%20the%20results)
 
-- `-F`
+- `-s`
 - `-g`
 
-These two options I found from this website --> [less(1) — Linux manual page]((https://man7.org/linux/man-pages/man1/less.1.html)
+These two options I found from this website --> [less(1) — Linux manual page](https://man7.org/linux/man-pages/man1/less.1.html)
 
 ---
-## -N: Line numbers
+## -N: Line Numbers
 
 `less -N plos/pmed.0010029.txt`
 
@@ -26,3 +26,10 @@ These two options I found from this website --> [less(1) — Linux manual page](
 ![Image](lab3-img2)
 
 - The -N option for less displays the line number next to all the lines in the text file. This is useful if you are referring to a specific line number that you might need and useful for navigating both large and small files.
+
+---
+
+## -s: Merges Empty Lines
+
+`less -Ns plos/pmed.0010029.txt`
+
