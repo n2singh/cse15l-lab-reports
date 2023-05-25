@@ -14,11 +14,11 @@
 
 `less -N plos/pmed.0010029.txt`
 
-![Image](lab3-img1)
+![Image](lab3-img1.png)
 
 `less -N ./technical/plos/pmed.0020281.txt`
 
-![Image](lab3-img2)
+![Image](lab3-img2.png)
 
 - The `-N` option for less displays the line number next to all the lines in the text file. This is useful if you are referring to a specific line number that you might need and useful for navigating both large and small files.
 
@@ -32,11 +32,11 @@ This site stated, "Use the -N option to display the specified text file with lin
 
 `less -F ./technical/plos/pmed.0020281.txt`
 
-![Image](lab3-img3)
+![Image](lab3-img3.png)
 
 `less -F ./technical/plos/pmed.0020191.txt`
 
-![Image](lab3-img4)
+![Image](lab3-img4.png)
 
 - The `-F` option views the contents of a file and quits out of the less command if the contents fit on the screen. This is useful when you are trying to view a file real quick without having to quit out of the less command.
 
@@ -50,11 +50,11 @@ This site stated, "-F or --quit-if-one-screen Causes less to automatically exit 
 
 `less -X ./technical/biomed/1471-2490-3-2.txt`
 
-![Image](lab3-img5)
+![Image](lab3-img5.png)
 
 `less -X ./technical/plos/pmed.0020258.txt`
 
-![Image](lab3-img6)
+![Image](lab3-img6.png)
 
 - The option `-X` allows us to view some parts of the file without clearing the screen. This makes it easier to view files simultaneously.
 
@@ -68,11 +68,11 @@ This site stated, "-X or --no-init Disables sending the termcap initialization a
 
 `less -g ./technical/plos/pmed.0020191.txt ./technical/plos/pmed.0020281.txt`
 
-![Image](lab3-img7)
+![Image](lab3-img7.png)
 
 `less -g ./technical/biomed/1471-2490-3-2.txt ./technical/biomed/rr196.txt`
 
-![Image](lab3-img8)
+![Image](lab3-img8.png)
 
 - The `-g` option will display the file that comes first between the arguments that you put at the command line. This is useful when you want to know what file comes first.
 
