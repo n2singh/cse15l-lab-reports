@@ -7,7 +7,7 @@
 
 *Student*
 
-**What environment are you using (computer, operating system, web browser, terminal/editor, and so on)?**
+> **What environment are you using (computer, operating system, web browser, terminal/editor, and so on)?**
 
 Terminal on VSCode 
 I am in the `lab5` directory with two folders (`one` and `anotherOne`). 
