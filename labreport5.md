@@ -11,11 +11,14 @@
 
 Terminal on VSCode 
 I am in the `lab5` directory with two folders (`one` and `anotherOne`). 
+
 `one` has a bash script called `work.sh` and `anotherOne` has a java file called `test.java`.
 
 > **Detail the symptom you're seeing. Be specific; include both what you're seeing and what you expected to see instead. Screenshots are great, copy-pasted terminal output is also great. Avoid saying “It doesn't work”.**
 
-I am having trouble trying to run my bash script called `work.sh`.`work.sh` ia suppoed to run the java file I have located in `anotherOne`, but when I type `./work.sh` onto the terminal, I get the error 
+I am having trouble trying to run my bash script called `work.sh`.
+`work.sh` ia suppoed to run the java file I have located in `anotherOne`, 
+but when I type `./work.sh` onto the terminal, I get the error 
 
 `bash: ./work.sh: No such file or directory.`
 
