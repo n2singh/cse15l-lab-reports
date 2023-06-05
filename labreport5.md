@@ -27,7 +27,7 @@ Here is a picture of my error.
 
 ![Image](lab5img1.png)
 
-**Detail the failure-inducing input and context. That might mean any or all of the command you're running, a test case, command-line arguments, working directory, even the last few commands you ran. Do your best to provide as much context as you can.**
+> **Detail the failure-inducing input and context. That might mean any or all of the command you're running, a test case, command-line arguments, working directory, even the last few commands you ran. Do your best to provide as much context as you can.**
 
 I spelled my bash script command correctly, made sure that within my bash script, I inputted the correct java file to run. 
 I'm not sure why it cannot find the file when I typed everything out correctly and the commands themself are correct. 
