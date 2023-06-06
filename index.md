@@ -1,83 +1,100 @@
-# Lab Report 3
----
-- For this lab, I will be focusing on the `less` command
----
-4 interesting command-line options I will be using are:
-
-- `-N`
-- `-F`
-- `-X`
-- `-g`
-
----
-## -N: Line Numbers
-
-`less -N plos/pmed.0010029.txt`
-
-![Image](lab3-img1.png)
-
-`less -N ./technical/plos/pmed.0020281.txt`
-
-![Image](lab3-img2.png)
-
-- The `-N` option for less displays the line number next to all the lines in the text file. This is useful if you are referring to a specific line number that you might need and useful for navigating both large and small files.
-
-Citation: [How to Use the less Command in Linux with Examples](https://phoenixnap.com/kb/less-command-in-linux#:~:text=Note%3A%20By%20default%2C%20searching%20in,phrase%20and%20see%20the%20results)
-
-This site stated, "Use the -N option to display the specified text file with line numbers. Displaying line numbers is useful for code reviews or paired programming because they make it easier to locate a specific issue."
+# Lab Report 5
 
 ---
 
-## -F: Merges Empty Lines
+## Part 1 – Debugging Scenario
 
-`less -F ./technical/plos/pmed.0020281.txt`
+*Student*
 
-![Image](lab3-img3.png)
+> **What environment are you using (computer, operating system, web browser, terminal/editor, and so on)?**
 
-`less -F ./technical/plos/pmed.0020191.txt`
+Terminal on VSCode 
+I am in the `lab5` directory with two folders (`one` and `anotherOne`). 
 
-![Image](lab3-img4.png)
+`one` has a bash script called `work.sh` and `anotherOne` has a java file called `test.java`.
 
-- The `-F` option views the contents of a file and quits out of the less command if the contents fit on the screen. This is useful when you are trying to view a file real quick without having to quit out of the less command.
+> **Detail the symptom you're seeing. Be specific; include both what you're seeing and what you expected to see instead. Screenshots are great, copy-pasted terminal output is also great. Avoid saying “It doesn't work”.**
 
-Citation: [less(1) — Linux manual page](https://man7.org/linux/man-pages/man1/less.1.html)
+I am having trouble trying to run my bash script called `work.sh`.
+`work.sh` ia suppoed to run the java file I have located in `anotherOne`, 
+but when I type `./work.sh` onto the terminal, I get the error 
 
-This site stated, "-F or --quit-if-one-screen Causes less to automatically exit if the entire file can be displayed on the first screen."
+`bash: ./work.sh: No such file or directory.`
+
+I am trying to get my java file to run and to print out the result 
+
+`My name is Naina, what's yours?`
+
+Here is a picture of my error.
+
+![Image](lab5img1.png)
+
+> **Detail the failure-inducing input and context. That might mean any or all of the command you're running, a test case, command-line arguments, working directory, even the last few commands you ran. Do your best to provide as much context as you can.**
+
+I spelled my bash script command correctly, made sure that within my bash script, I inputted the correct java file to run. 
+I'm not sure why it cannot find the file when I typed everything out correctly and the commands themself are correct. 
+Can you help me with this bug? Thank you!
+
+*TA Response*
+
+Hi there! You can try using the command `pwd`. This shows the directory you are in. 
+What does this tell you when you input this into the command line? Which directory are you currently in? 
+The command `ls` is also helpful. Remember you can use `cd` to change your directory.
+Try those commands out and report what you see!
+
+*Student Response*
+
+![Image](lab5img2.png)
+
+I tried `ls` and `pwd` and saw that I was not in the correct directory. 
+Eventhough `work.sh` is in the `lab5` directory, I realized to run `work.sh` first.
+I needed to `cd` into `one` inorder to run the script. 
+I fixed my error by running `cd one` into the terminal, and then I ran `./work.sh`.
+
+![Image](lab5img3.png)
 
 ---
 
-## -X: Does Not Clear Screen
+## Set-Up and Run the Scenario 
+---
+I created a folder called `lab5` and had two other folders within `anotherOne` and `one`. I had a bash script named `work.sh` in one and a java file named `test.java` in `anotherOne`.
 
-`less -X ./technical/biomed/1471-2490-3-2.txt`
+![Image](lab5img4.png)
 
-![Image](lab3-img5.png)
+contents in `test.java`
 
-`less -X ./technical/plos/pmed.0020258.txt`
+```
+public class test {
+    public static void main(String[] args) {
+        System.out.println("My name is Naina, what's yours?");
+    }
+}
+```
 
-![Image](lab3-img6.png)
+contents in `work.sh`:
 
-- The option `-X` allows us to view some parts of the file without clearing the screen. This makes it easier to view files simultaneously.
+```
+#!/bin/bash
+javac ../anotherOne/test.java
+java -cp ../anotherOne test
+```
 
-Citation: [less(1) — Linux manual page](https://man7.org/linux/man-pages/man1/less.1.html)
+To trigger the bug, I ran:  `./work.sh`
 
-This site stated, "-X or --no-init Disables sending the termcap initialization and deinitialization strings to the terminal.  This is sometimes desirable if the deinitialization string does something unnecessary, like clearing the screen."
+![Image](lab5img1.png)
+
+To fix the bug, I ran the following command on the terminal:
+
+```
+cd one
+```
+
+The student was not able to run the bash script because they were in the wrong directory. Instead of being in the one reletive path, the student was in the lab5 directory. 
+To fix this bug, the student needed to change their directory to `one`, which is where the bash script `work.sh` is located.
 
 ---
 
-## -g:
+## Part 2 – Reflection
 
-`less -g ./technical/plos/pmed.0020191.txt ./technical/plos/pmed.0020281.txt`
-
-![Image](lab3-img7.png)
-
-`less -g ./technical/biomed/1471-2490-3-2.txt ./technical/biomed/rr196.txt`
-
-![Image](lab3-img8.png)
-
-- The `-g` option will display the file that comes first between the arguments that you put at the command line. This is useful when you want to know what file comes first.
-
-Citation:  [less(1) — Linux manual page](https://man7.org/linux/man-pages/man1/less.1.html)
-
-This site stated, "-g or --hilite-search Normally, less will highlight ALL strings which match the last search command.  The -g option changes this behavior to highlight only the particular string which was found by the last search command.  This can cause less to run somewhat faster than the default."
-
----
+Something I learned from my lab experience in the second half of this quarter was when we got the 2-3 lessons on Vim. It was really fun to learn about this new platform that 
+wasn't VSCode for once lol. One of the main advantages of Vim is its efficiency. The editor is designed to minimize the need for mouse usage and maximize keyboard shortcuts. This allows users to perform tasks rapidly without lifting their hands off the keyboard, resulting in increased productivity. Although this is technical, I still find it really interesting and hope to experiment with Vim more now that it has been taught!
